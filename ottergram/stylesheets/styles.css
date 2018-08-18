@@ -1,0 +1,159 @@
+@font-face {
+  font-family: lakeshore;
+  src: url(fonts/LAKESHOR-webfont.eot), url(fonts/LAKESHOR-webfont.eot?#iefix), url(fonts/LAKESHOR-webfont.woff), url(fonts/LAKESHOR-webfont.ttf), url(fonts/LAKESHOR-webfont.svg#lakeshore);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: airstreamregular;
+  src: url(fonts/Airstream-webfont.eot), url(fonts/Airstream-webfont.eot?#iefix), url(fonts/Airstream-webfont.woff), url(fonts/Airstream-webfont.ttf), url(fonts/Airstream-webfont.svg#lakeshore);
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  background: rgb(77, 121, 255);
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo-text {
+  background: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 37px;
+  font-family: lakeshore;
+}
+
+.thumbnail-title {
+  background: rgb(96, 125, 139);
+  color: rgb(202, 238, 235);
+  display: block;
+  margin: 0;
+  padding: 4px 10px;
+  font-size: 18px;
+}
+
+.thumbnail-image {
+  display: block;
+  width: 100%;
+}
+
+.thumbnail-item {
+  border: 1px solid rgba(100%, 100%, 100%, 0.8);
+  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
+  display: inline-block;
+  transition: transform 133ms;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.2);
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
+}
+
+.thumbnail-list {
+  flex: 0 1 auto;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  padding: 20px 0;
+  order: 2;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.detail-image {
+  width: 90%;
+}
+
+.main-header {
+  flex: 0 1 auto;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-image-container {
+  flex: 1 1 auto;
+}
+
+.detail-image-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-image-title {
+  color: white;
+  font-size: 40px;
+  font-family: airstreamregular;
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
+
+  position: absolute;
+  bottom: -16px;
+  left: 4px;
+}
+
+.detail-image-frame {
+  position: relative;
+  text-align: center;
+
+  transition: transform 333ms;
+}
+
+.hidden-detail .detail-image-container {
+  display: none;
+}
+
+.hidden-detail .thumbnail-list {
+  align-items: center;
+  flex-direction: column;
+}
+
+.hidden-detail .thumbnail-item {
+  min-width:  80%;
+  max-width: 80%;
+}
+
+@media all and (orientation: portrait) {
+  .main-content {
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .thumbnail-list {
+    flex-direction: column;
+    order: 0;
+    margin-left: 20px;
+
+    padding: 0 35px;
+  }
+
+  .thumbnail-item {
+    max-width: 260px;
+  }
+
+  .thumbnail-item + .thumbnail-item {
+    margin-top: 20px;
+  }
+}
